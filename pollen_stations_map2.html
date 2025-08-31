@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_71a029c0df221db503a5059fefb10b66 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_71a029c0df221db503a5059fefb10b66" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_71a029c0df221db503a5059fefb10b66 = L.map(
+                "map_71a029c0df221db503a5059fefb10b66",
+                {
+                    center: [30.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_71a029c0df221db503a5059fefb10b66);
+
+            
+
+        
+    
+            var tile_layer_e96c3cd8e78e8e9c329fe854c36a40b8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e96c3cd8e78e8e9c329fe854c36a40b8.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var tile_layer_cec8f77263f289c8f84a279f85486d90 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 13,
+  "maxNativeZoom": 13,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: USGS, Esri, TANA, DeLorme, and NPS",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cec8f77263f289c8f84a279f85486d90.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var tile_layer_748b52589f62fefb2c96228d5b830f51 = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 17,
+  "maxNativeZoom": 17,
+  "noWrap": false,
+  "attribution": "Map data: \u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href=\"http://viewfinderpanoramas.org\"\u003eSRTM\u003c/a\u003e | Map style: \u0026copy; \u003ca href=\"https://opentopomap.org\"\u003eOpenTopoMap\u003c/a\u003e (\u003ca href=\"https://creativecommons.org/licenses/by-sa/3.0/\"\u003eCC-BY-SA\u003c/a\u003e)",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_748b52589f62fefb2c96228d5b830f51.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var tile_layer_7651f69127d32aa433a9ac996d12cc8f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7651f69127d32aa433a9ac996d12cc8f.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var tile_layer_a1cc9b51f76466092346c870abe7165b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a1cc9b51f76466092346c870abe7165b.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var tile_layer_f62ec949b7c74c981a358dc90fa4b550 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_b9e70d4cd2a34f75030adbc4de2dbb6b = new L.Control.MiniMap(
+                tile_layer_f62ec949b7c74c981a358dc90fa4b550,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_71a029c0df221db503a5059fefb10b66.addControl(mini_map_b9e70d4cd2a34f75030adbc4de2dbb6b);
+        
+    
+            var feature_group_3ec698a48131eb9ddb53de0277f3672a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_06738cd1638302f519b096deec048210 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_2322517530a1dc98a260c8629b81ab2a = L.marker(
+                [-33.955, 18.4875],
+                {
+}
+            ).addTo(marker_cluster_06738cd1638302f519b096deec048210);
+        
+    
+            var icon_b5e8d06f682e7960b3817fc2a1ee1a18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3cf227a7b28c8f48501c183ae5a5de7c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7d188e4d6db1a4b9082bcd81f9bcabe1 = $(`<div id="html_7d188e4d6db1a4b9082bcd81f9bcabe1" style="width: 100.0%; height: 100.0%;"><b>Cape Town</b> (South Africa)<br>Region: Africa<br>Period: 1984-2006<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_3cf227a7b28c8f48501c183ae5a5de7c.setContent(html_7d188e4d6db1a4b9082bcd81f9bcabe1);
+            
+        
+
+        marker_2322517530a1dc98a260c8629b81ab2a.bindPopup(popup_3cf227a7b28c8f48501c183ae5a5de7c)
+        ;
+
+        
+    
+    
+            marker_2322517530a1dc98a260c8629b81ab2a.bindTooltip(
+                `<div>
+                     Cape Town — South Africa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2322517530a1dc98a260c8629b81ab2a.setIcon(icon_b5e8d06f682e7960b3817fc2a1ee1a18);
+            
+    
+            marker_cluster_06738cd1638302f519b096deec048210.addTo(feature_group_3ec698a48131eb9ddb53de0277f3672a);
+        
+    
+            feature_group_3ec698a48131eb9ddb53de0277f3672a.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var feature_group_3606f7e0ca7c59314ae85b5ebc12b6be = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_dd8c36315ddaacfc9dd1813c6dcd9b9b = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_f29205ecb6aba1c5d3dcd015aa5f9950 = L.marker(
+                [37.56, 127.044],
+                {
+}
+            ).addTo(marker_cluster_dd8c36315ddaacfc9dd1813c6dcd9b9b);
+        
+    
+            var icon_1fdf3b991d50b5eea973f0e02331b1ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b408c6117792d7a99ffd868fa6388a55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2d62f8edbf706fb8bda0a4c0b96106c = $(`<div id="html_c2d62f8edbf706fb8bda0a4c0b96106c" style="width: 100.0%; height: 100.0%;"><b>Seoul</b> (South Korea)<br>Region: Asia<br>Period: 1998-2017<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_b408c6117792d7a99ffd868fa6388a55.setContent(html_c2d62f8edbf706fb8bda0a4c0b96106c);
+            
+        
+
+        marker_f29205ecb6aba1c5d3dcd015aa5f9950.bindPopup(popup_b408c6117792d7a99ffd868fa6388a55)
+        ;
+
+        
+    
+    
+            marker_f29205ecb6aba1c5d3dcd015aa5f9950.bindTooltip(
+                `<div>
+                     Seoul — South Korea
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f29205ecb6aba1c5d3dcd015aa5f9950.setIcon(icon_1fdf3b991d50b5eea973f0e02331b1ce);
+            
+    
+            var marker_417fb902f105b1c062cdfaba47676eb7 = L.marker(
+                [36.11, 129.109],
+                {
+}
+            ).addTo(marker_cluster_dd8c36315ddaacfc9dd1813c6dcd9b9b);
+        
+    
+            var icon_3ac07897540336a0bd1490837715fe54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5d5affd982b2a9a33050a4558585a66b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd39ba0b2eb2b12da75b5cec4600c6dc = $(`<div id="html_fd39ba0b2eb2b12da75b5cec4600c6dc" style="width: 100.0%; height: 100.0%;"><b>Busan</b> (South Korea)<br>Region: Asia<br>Period: 1998-2017<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_5d5affd982b2a9a33050a4558585a66b.setContent(html_fd39ba0b2eb2b12da75b5cec4600c6dc);
+            
+        
+
+        marker_417fb902f105b1c062cdfaba47676eb7.bindPopup(popup_5d5affd982b2a9a33050a4558585a66b)
+        ;
+
+        
+    
+    
+            marker_417fb902f105b1c062cdfaba47676eb7.bindTooltip(
+                `<div>
+                     Busan — South Korea
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_417fb902f105b1c062cdfaba47676eb7.setIcon(icon_3ac07897540336a0bd1490837715fe54);
+            
+    
+            var marker_38aef2ea60e13f981db404704b9ac527 = L.marker(
+                [40.226, 28.864],
+                {
+}
+            ).addTo(marker_cluster_dd8c36315ddaacfc9dd1813c6dcd9b9b);
+        
+    
+            var icon_a7559f0ca8e4634a6f420dd8ba4a2402 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50b54a35476b2b76e0a534dd5f0d21cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c2103f172f106f189686dd75ced6e14 = $(`<div id="html_9c2103f172f106f189686dd75ced6e14" style="width: 100.0%; height: 100.0%;"><b>Bursa</b> (Turkey)<br>Region: Asia<br>Period: 2000-2020<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_50b54a35476b2b76e0a534dd5f0d21cd.setContent(html_9c2103f172f106f189686dd75ced6e14);
+            
+        
+
+        marker_38aef2ea60e13f981db404704b9ac527.bindPopup(popup_50b54a35476b2b76e0a534dd5f0d21cd)
+        ;
+
+        
+    
+    
+            marker_38aef2ea60e13f981db404704b9ac527.bindTooltip(
+                `<div>
+                     Bursa — Turkey
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_38aef2ea60e13f981db404704b9ac527.setIcon(icon_a7559f0ca8e4634a6f420dd8ba4a2402);
+            
+    
+            marker_cluster_dd8c36315ddaacfc9dd1813c6dcd9b9b.addTo(feature_group_3606f7e0ca7c59314ae85b5ebc12b6be);
+        
+    
+            feature_group_3606f7e0ca7c59314ae85b5ebc12b6be.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var feature_group_22ce9754245d3b2afd58b943d0d52414 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_fba46e116e1614c065c4261e8161f71e = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_bd350518f3d1fd32ac720a5a026a1d06 = L.marker(
+                [49.863, 5.442],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_c36b606aedc90a81c4ca0a3bffcc832d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f08857af3d7b4796e59052150fca14ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3719962e311a230716c9f1f1603dd52f = $(`<div id="html_3719962e311a230716c9f1f1603dd52f" style="width: 100.0%; height: 100.0%;"><b>Amiens</b> (France)<br>Region: EU<br>Period: 1987-2017<br>Updateable: <b>No</b></div>`)[0];
+                popup_f08857af3d7b4796e59052150fca14ab.setContent(html_3719962e311a230716c9f1f1603dd52f);
+            
+        
+
+        marker_bd350518f3d1fd32ac720a5a026a1d06.bindPopup(popup_f08857af3d7b4796e59052150fca14ab)
+        ;
+
+        
+    
+    
+            marker_bd350518f3d1fd32ac720a5a026a1d06.bindTooltip(
+                `<div>
+                     Amiens — France
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd350518f3d1fd32ac720a5a026a1d06.setIcon(icon_c36b606aedc90a81c4ca0a3bffcc832d);
+            
+    
+            var marker_e0ba16bc2a4d588dfc97928f404d2b31 = L.marker(
+                [50.824, 4.383],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_41043396dcdd4cba266d698e1c733ed8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a35bab460feb4492310a6f7553c6214c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bd44fe4db016e0753855cbb530ec1c05 = $(`<div id="html_bd44fe4db016e0753855cbb530ec1c05" style="width: 100.0%; height: 100.0%;"><b>Brussels</b> (Belgium)<br>Region: EU<br>Period: 1982-2020<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_a35bab460feb4492310a6f7553c6214c.setContent(html_bd44fe4db016e0753855cbb530ec1c05);
+            
+        
+
+        marker_e0ba16bc2a4d588dfc97928f404d2b31.bindPopup(popup_a35bab460feb4492310a6f7553c6214c)
+        ;
+
+        
+    
+    
+            marker_e0ba16bc2a4d588dfc97928f404d2b31.bindTooltip(
+                `<div>
+                     Brussels — Belgium
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e0ba16bc2a4d588dfc97928f404d2b31.setIcon(icon_41043396dcdd4cba266d698e1c733ed8);
+            
+    
+            var marker_1960714e3c2e68e80b01334a9e224e57 = L.marker(
+                [46.192, 6.1475],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_a514a60918a1600716c4c662311880de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21de4fcb86ab7905b64754b270d9f650 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d12c3c85a15c3db20a5732db6873e0c2 = $(`<div id="html_d12c3c85a15c3db20a5732db6873e0c2" style="width: 100.0%; height: 100.0%;"><b>Geneva</b> (Switzerland)<br>Region: EU<br>Period: 1979-2017<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_21de4fcb86ab7905b64754b270d9f650.setContent(html_d12c3c85a15c3db20a5732db6873e0c2);
+            
+        
+
+        marker_1960714e3c2e68e80b01334a9e224e57.bindPopup(popup_21de4fcb86ab7905b64754b270d9f650)
+        ;
+
+        
+    
+    
+            marker_1960714e3c2e68e80b01334a9e224e57.bindTooltip(
+                `<div>
+                     Geneva — Switzerland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1960714e3c2e68e80b01334a9e224e57.setIcon(icon_a514a60918a1600716c4c662311880de);
+            
+    
+            var marker_9cfbe883d9ddded5f76842fbb6b180df = L.marker(
+                [69.757, 27.008],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_1f9c1a9e4006b1ab9278d49ab55da929 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c410a1b30f51cefe6c014de9376d5044 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5b10887a38db881980f54403ff68e2a = $(`<div id="html_a5b10887a38db881980f54403ff68e2a" style="width: 100.0%; height: 100.0%;"><b>Kevo</b> (Finland)<br>Region: EU<br>Period: 1978-2016<br>Updateable: <b>No</b></div>`)[0];
+                popup_c410a1b30f51cefe6c014de9376d5044.setContent(html_a5b10887a38db881980f54403ff68e2a);
+            
+        
+
+        marker_9cfbe883d9ddded5f76842fbb6b180df.bindPopup(popup_c410a1b30f51cefe6c014de9376d5044)
+        ;
+
+        
+    
+    
+            marker_9cfbe883d9ddded5f76842fbb6b180df.bindTooltip(
+                `<div>
+                     Kevo — Finland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9cfbe883d9ddded5f76842fbb6b180df.setIcon(icon_1f9c1a9e4006b1ab9278d49ab55da929);
+            
+    
+            var marker_36b8a6bafc65f7f74210aa190d7e66b0 = L.marker(
+                [60.4552, 22.285],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_9c01a85d5afbc2a500c5394fc2efb1a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4688924526d47900129f9ca09dcf2170 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f6a58984d6dbe71ed2b4dc00cd2399ea = $(`<div id="html_f6a58984d6dbe71ed2b4dc00cd2399ea" style="width: 100.0%; height: 100.0%;"><b>Turku</b> (Finland)<br>Region: EU<br>Period: 1973-2016<br>Updateable: <b>No</b></div>`)[0];
+                popup_4688924526d47900129f9ca09dcf2170.setContent(html_f6a58984d6dbe71ed2b4dc00cd2399ea);
+            
+        
+
+        marker_36b8a6bafc65f7f74210aa190d7e66b0.bindPopup(popup_4688924526d47900129f9ca09dcf2170)
+        ;
+
+        
+    
+    
+            marker_36b8a6bafc65f7f74210aa190d7e66b0.bindTooltip(
+                `<div>
+                     Turku — Finland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_36b8a6bafc65f7f74210aa190d7e66b0.setIcon(icon_9c01a85d5afbc2a500c5394fc2efb1a5);
+            
+    
+            var marker_c6902dfe77b49b647005f1b2bacd0fb7 = L.marker(
+                [50.067, 19.967],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_52d24130353322b32f942c2e6895fd04 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_604dcdd4004b5a650a87dbfdffbe3d32 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e4736f9e678247765d49d20bf7c02d07 = $(`<div id="html_e4736f9e678247765d49d20bf7c02d07" style="width: 100.0%; height: 100.0%;"><b>Krakow</b> (Poland)<br>Region: EU<br>Period: 1997-2017<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_604dcdd4004b5a650a87dbfdffbe3d32.setContent(html_e4736f9e678247765d49d20bf7c02d07);
+            
+        
+
+        marker_c6902dfe77b49b647005f1b2bacd0fb7.bindPopup(popup_604dcdd4004b5a650a87dbfdffbe3d32)
+        ;
+
+        
+    
+    
+            marker_c6902dfe77b49b647005f1b2bacd0fb7.bindTooltip(
+                `<div>
+                     Krakow — Poland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c6902dfe77b49b647005f1b2bacd0fb7.setIcon(icon_52d24130353322b32f942c2e6895fd04);
+            
+    
+            var marker_11e65aa85e45b69af90f16a52b2fc8a9 = L.marker(
+                [45.59, 8.923],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_50fcfd354d222431ab645811795d0c49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d2e65f55af3f4c033bf312664c2e602e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f0fea24858a3d3a1b44fc95619c36604 = $(`<div id="html_f0fea24858a3d3a1b44fc95619c36604" style="width: 100.0%; height: 100.0%;"><b>Legnano</b> (Italy)<br>Region: EU<br>Period: 1995-2016<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_d2e65f55af3f4c033bf312664c2e602e.setContent(html_f0fea24858a3d3a1b44fc95619c36604);
+            
+        
+
+        marker_11e65aa85e45b69af90f16a52b2fc8a9.bindPopup(popup_d2e65f55af3f4c033bf312664c2e602e)
+        ;
+
+        
+    
+    
+            marker_11e65aa85e45b69af90f16a52b2fc8a9.bindTooltip(
+                `<div>
+                     Legnano — Italy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_11e65aa85e45b69af90f16a52b2fc8a9.setIcon(icon_50fcfd354d222431ab645811795d0c49);
+            
+    
+            var marker_553ef4a69686f8fee195b7179bdd41fd = L.marker(
+                [55.707, 37.519],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_b8f34c92bd6dc255d538f3f9b64df509 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a2d2537b9e366accac7296bb8a8b548d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c5aead6b695ef1ab9316475d1c65683 = $(`<div id="html_9c5aead6b695ef1ab9316475d1c65683" style="width: 100.0%; height: 100.0%;"><b>Moscow</b> (Russia)<br>Region: EU<br>Period: 1994-2020<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_a2d2537b9e366accac7296bb8a8b548d.setContent(html_9c5aead6b695ef1ab9316475d1c65683);
+            
+        
+
+        marker_553ef4a69686f8fee195b7179bdd41fd.bindPopup(popup_a2d2537b9e366accac7296bb8a8b548d)
+        ;
+
+        
+    
+    
+            marker_553ef4a69686f8fee195b7179bdd41fd.bindTooltip(
+                `<div>
+                     Moscow — Russia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_553ef4a69686f8fee195b7179bdd41fd.setIcon(icon_b8f34c92bd6dc255d538f3f9b64df509);
+            
+    
+            var marker_4920ac5aa8d1c3ac36ae92cb2f6d8189 = L.marker(
+                [64.127, -21.903],
+                {
+}
+            ).addTo(marker_cluster_fba46e116e1614c065c4261e8161f71e);
+        
+    
+            var icon_a8bbfb2e7aa33b90ef2f8ef46e3d5c36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b904875b3b7f3a3a29abbdd5daa51a12 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87744241cf4410bdadc57982500b91d1 = $(`<div id="html_87744241cf4410bdadc57982500b91d1" style="width: 100.0%; height: 100.0%;"><b>Reykjavik</b> (Iceland)<br>Region: EU<br>Period: 1988-2013<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_b904875b3b7f3a3a29abbdd5daa51a12.setContent(html_87744241cf4410bdadc57982500b91d1);
+            
+        
+
+        marker_4920ac5aa8d1c3ac36ae92cb2f6d8189.bindPopup(popup_b904875b3b7f3a3a29abbdd5daa51a12)
+        ;
+
+        
+    
+    
+            marker_4920ac5aa8d1c3ac36ae92cb2f6d8189.bindTooltip(
+                `<div>
+                     Reykjavik — Iceland
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4920ac5aa8d1c3ac36ae92cb2f6d8189.setIcon(icon_a8bbfb2e7aa33b90ef2f8ef46e3d5c36);
+            
+    
+            marker_cluster_fba46e116e1614c065c4261e8161f71e.addTo(feature_group_22ce9754245d3b2afd58b943d0d52414);
+        
+    
+            feature_group_22ce9754245d3b2afd58b943d0d52414.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var feature_group_1b7752899f6ff77a41c0b505547bf83e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_278a0f9ec86ff21c88d448b0dff4d2f2 = L.marker(
+                [19.326, -99.176],
+                {
+}
+            ).addTo(marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324);
+        
+    
+            var icon_7c42aeca17f6984cbde7b9cc57913258 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb2bbca5810cad7d33bacc8a078f0928 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_240cc1e23736cb21182ea562beddd14e = $(`<div id="html_240cc1e23736cb21182ea562beddd14e" style="width: 100.0%; height: 100.0%;"><b>Mexico City</b> (Mexico)<br>Region: North America<br>Period: 2008-2020<br>Updateable: <b>No</b></div>`)[0];
+                popup_bb2bbca5810cad7d33bacc8a078f0928.setContent(html_240cc1e23736cb21182ea562beddd14e);
+            
+        
+
+        marker_278a0f9ec86ff21c88d448b0dff4d2f2.bindPopup(popup_bb2bbca5810cad7d33bacc8a078f0928)
+        ;
+
+        
+    
+    
+            marker_278a0f9ec86ff21c88d448b0dff4d2f2.bindTooltip(
+                `<div>
+                     Mexico City — Mexico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_278a0f9ec86ff21c88d448b0dff4d2f2.setIcon(icon_7c42aeca17f6984cbde7b9cc57913258);
+            
+    
+            var marker_5ceaa80ed72e69a014c8f18b610d1eae = L.marker(
+                [52.145, -106.648],
+                {
+}
+            ).addTo(marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324);
+        
+    
+            var icon_7111319053e043915fc75a5bd65e22c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_074e991a1f234e1031ad560267ee4684 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_343a7c3bb81d353d2b2921c324e7fcca = $(`<div id="html_343a7c3bb81d353d2b2921c324e7fcca" style="width: 100.0%; height: 100.0%;"><b>Saskatoon</b> (Canada)<br>Region: North America<br>Period: <br>Updateable: <b>No</b></div>`)[0];
+                popup_074e991a1f234e1031ad560267ee4684.setContent(html_343a7c3bb81d353d2b2921c324e7fcca);
+            
+        
+
+        marker_5ceaa80ed72e69a014c8f18b610d1eae.bindPopup(popup_074e991a1f234e1031ad560267ee4684)
+        ;
+
+        
+    
+    
+            marker_5ceaa80ed72e69a014c8f18b610d1eae.bindTooltip(
+                `<div>
+                     Saskatoon — Canada
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ceaa80ed72e69a014c8f18b610d1eae.setIcon(icon_7111319053e043915fc75a5bd65e22c9);
+            
+    
+            var marker_59ac6ac29645534e1c39ebeed0f08d0d = L.marker(
+                [49.9, -97.138],
+                {
+}
+            ).addTo(marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324);
+        
+    
+            var icon_83144728b6a388c8ebfef8a81b1f5746 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7d56306adf76157a7f54fd72cc519c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f146693b52ccc5394be91de50ed0a87 = $(`<div id="html_2f146693b52ccc5394be91de50ed0a87" style="width: 100.0%; height: 100.0%;"><b>Winnipeg</b> (Canada)<br>Region: North America<br>Period: <br>Updateable: <b>No</b></div>`)[0];
+                popup_f7d56306adf76157a7f54fd72cc519c1.setContent(html_2f146693b52ccc5394be91de50ed0a87);
+            
+        
+
+        marker_59ac6ac29645534e1c39ebeed0f08d0d.bindPopup(popup_f7d56306adf76157a7f54fd72cc519c1)
+        ;
+
+        
+    
+    
+            marker_59ac6ac29645534e1c39ebeed0f08d0d.bindTooltip(
+                `<div>
+                     Winnipeg — Canada
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59ac6ac29645534e1c39ebeed0f08d0d.setIcon(icon_83144728b6a388c8ebfef8a81b1f5746);
+            
+    
+            var marker_bc977a80b301083bbea9a3e54a8d4aa5 = L.marker(
+                [64.839, -147.713],
+                {
+}
+            ).addTo(marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324);
+        
+    
+            var icon_cc456810e765c2cfc3cb04dec2f455e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_be0bdb0192b6e290747a454c5ca8f47d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52a515e11441ee17378404edc0ce05d2 = $(`<div id="html_52a515e11441ee17378404edc0ce05d2" style="width: 100.0%; height: 100.0%;"><b>Fairbanks</b> (USA)<br>Region: North America<br>Period: 2000-2020<br>Updateable: <b>No</b></div>`)[0];
+                popup_be0bdb0192b6e290747a454c5ca8f47d.setContent(html_52a515e11441ee17378404edc0ce05d2);
+            
+        
+
+        marker_bc977a80b301083bbea9a3e54a8d4aa5.bindPopup(popup_be0bdb0192b6e290747a454c5ca8f47d)
+        ;
+
+        
+    
+    
+            marker_bc977a80b301083bbea9a3e54a8d4aa5.bindTooltip(
+                `<div>
+                     Fairbanks — USA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc977a80b301083bbea9a3e54a8d4aa5.setIcon(icon_cc456810e765c2cfc3cb04dec2f455e7);
+            
+    
+            var marker_c08d826be16bdec59d6cdb7a49c62f58 = L.marker(
+                [41.137, -93.223],
+                {
+}
+            ).addTo(marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324);
+        
+    
+            var icon_60517e6b5c531e6582b51e2f0a378cef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99fd41f6f669c4ad42512c0224adf327 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa180da9afb459c56289adc850436f36 = $(`<div id="html_aa180da9afb459c56289adc850436f36" style="width: 100.0%; height: 100.0%;"><b>Minneapolis</b> (USA)<br>Region: North America<br>Period: 1993-2020<br>Updateable: <b>No</b></div>`)[0];
+                popup_99fd41f6f669c4ad42512c0224adf327.setContent(html_aa180da9afb459c56289adc850436f36);
+            
+        
+
+        marker_c08d826be16bdec59d6cdb7a49c62f58.bindPopup(popup_99fd41f6f669c4ad42512c0224adf327)
+        ;
+
+        
+    
+    
+            marker_c08d826be16bdec59d6cdb7a49c62f58.bindTooltip(
+                `<div>
+                     Minneapolis — USA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c08d826be16bdec59d6cdb7a49c62f58.setIcon(icon_60517e6b5c531e6582b51e2f0a378cef);
+            
+    
+            var marker_ee0102c86eb5fb78d30bee48d6e0fda2 = L.marker(
+                [36.151, -95.945],
+                {
+}
+            ).addTo(marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324);
+        
+    
+            var icon_1eff0d4538be2946217aeda44ef30ca5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_82b08769c8b583d5ebbc79a9608f2062 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab065c8cc5032a8b8a9f26d65c310a30 = $(`<div id="html_ab065c8cc5032a8b8a9f26d65c310a30" style="width: 100.0%; height: 100.0%;"><b>Tulsa</b> (USA)<br>Region: North America<br>Period: 1996-2020<br>Updateable: <b>No</b></div>`)[0];
+                popup_82b08769c8b583d5ebbc79a9608f2062.setContent(html_ab065c8cc5032a8b8a9f26d65c310a30);
+            
+        
+
+        marker_ee0102c86eb5fb78d30bee48d6e0fda2.bindPopup(popup_82b08769c8b583d5ebbc79a9608f2062)
+        ;
+
+        
+    
+    
+            marker_ee0102c86eb5fb78d30bee48d6e0fda2.bindTooltip(
+                `<div>
+                     Tulsa — USA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ee0102c86eb5fb78d30bee48d6e0fda2.setIcon(icon_1eff0d4538be2946217aeda44ef30ca5);
+            
+    
+            marker_cluster_1dc6dcf6014d79c14c78b19a58c0b324.addTo(feature_group_1b7752899f6ff77a41c0b505547bf83e);
+        
+    
+            feature_group_1b7752899f6ff77a41c0b505547bf83e.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var feature_group_f19ed32dcc4d971632f76debd8df6acd = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_2d8680a1113d755e6e65127ad89fc1f0 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_d6d2fd04ce92cdcf480480b41756d60c = L.marker(
+                [-27.4833, 153.133],
+                {
+}
+            ).addTo(marker_cluster_2d8680a1113d755e6e65127ad89fc1f0);
+        
+    
+            var icon_d75ded3e17465151563d03207f658e3b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b751d8f775f00bbcb8df5e59043c68ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_10f9aa4f34980158a8e7625606023e84 = $(`<div id="html_10f9aa4f34980158a8e7625606023e84" style="width: 100.0%; height: 100.0%;"><b>Brisbane</b> (Australia)<br>Region: Oceania<br>Period: 1994-1999; 2016-2020<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_b751d8f775f00bbcb8df5e59043c68ca.setContent(html_10f9aa4f34980158a8e7625606023e84);
+            
+        
+
+        marker_d6d2fd04ce92cdcf480480b41756d60c.bindPopup(popup_b751d8f775f00bbcb8df5e59043c68ca)
+        ;
+
+        
+    
+    
+            marker_d6d2fd04ce92cdcf480480b41756d60c.bindTooltip(
+                `<div>
+                     Brisbane — Australia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d6d2fd04ce92cdcf480480b41756d60c.setIcon(icon_d75ded3e17465151563d03207f658e3b);
+            
+    
+            var marker_297dbe40eb4e20487c1d90f6d6168b8f = L.marker(
+                [-34.065, 150.814],
+                {
+}
+            ).addTo(marker_cluster_2d8680a1113d755e6e65127ad89fc1f0);
+        
+    
+            var icon_826630a3cadcbf9054a615c35a5a4471 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d7b131f2e14bf8e59245010ffcf86091 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_463440b79a0588853ff5b1b47bb2539c = $(`<div id="html_463440b79a0588853ff5b1b47bb2539c" style="width: 100.0%; height: 100.0%;"><b>Sydney</b> (Australia)<br>Region: Oceania<br>Period: 2008-2020<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_d7b131f2e14bf8e59245010ffcf86091.setContent(html_463440b79a0588853ff5b1b47bb2539c);
+            
+        
+
+        marker_297dbe40eb4e20487c1d90f6d6168b8f.bindPopup(popup_d7b131f2e14bf8e59245010ffcf86091)
+        ;
+
+        
+    
+    
+            marker_297dbe40eb4e20487c1d90f6d6168b8f.bindTooltip(
+                `<div>
+                     Sydney — Australia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_297dbe40eb4e20487c1d90f6d6168b8f.setIcon(icon_826630a3cadcbf9054a615c35a5a4471);
+            
+    
+            marker_cluster_2d8680a1113d755e6e65127ad89fc1f0.addTo(feature_group_f19ed32dcc4d971632f76debd8df6acd);
+        
+    
+            feature_group_f19ed32dcc4d971632f76debd8df6acd.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var feature_group_b7fe345348eca8836c331bbf32a7387a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_2b4f0758375278437f6a5e60cfd04d5f = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_2754f32a98f3964e38a02309f6fe245e = L.marker(
+                [-29.167, -51.25],
+                {
+}
+            ).addTo(marker_cluster_2b4f0758375278437f6a5e60cfd04d5f);
+        
+    
+            var icon_9f949ea09e88ef7a4a3114c687bae688 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d406d2dedc3e2149268c889a3cb256e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb3546d4bc45e736babac61de0da1f74 = $(`<div id="html_cb3546d4bc45e736babac61de0da1f74" style="width: 100.0%; height: 100.0%;"><b>Caxias do Sul</b> (Brazil)<br>Region: South America<br>Period: 2001-2008<br>Updateable: <b>No</b></div>`)[0];
+                popup_d406d2dedc3e2149268c889a3cb256e2.setContent(html_cb3546d4bc45e736babac61de0da1f74);
+            
+        
+
+        marker_2754f32a98f3964e38a02309f6fe245e.bindPopup(popup_d406d2dedc3e2149268c889a3cb256e2)
+        ;
+
+        
+    
+    
+            marker_2754f32a98f3964e38a02309f6fe245e.bindTooltip(
+                `<div>
+                     Caxias do Sul — Brazil
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2754f32a98f3964e38a02309f6fe245e.setIcon(icon_9f949ea09e88ef7a4a3114c687bae688);
+            
+    
+            var marker_ddd9ce871d6b9d9d5bb7f76a59f3dc03 = L.marker(
+                [-33.45, -70.667],
+                {
+}
+            ).addTo(marker_cluster_2b4f0758375278437f6a5e60cfd04d5f);
+        
+    
+            var icon_f50ca4659cc3db4956320f1ea4fa9e5c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dffd53c4ac08a875735a50289a4786e0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_049915cc2284428498483426fc489227 = $(`<div id="html_049915cc2284428498483426fc489227" style="width: 100.0%; height: 100.0%;"><b>Santiago</b> (Chile)<br>Region: South America<br>Period: 2009-2013<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_dffd53c4ac08a875735a50289a4786e0.setContent(html_049915cc2284428498483426fc489227);
+            
+        
+
+        marker_ddd9ce871d6b9d9d5bb7f76a59f3dc03.bindPopup(popup_dffd53c4ac08a875735a50289a4786e0)
+        ;
+
+        
+    
+    
+            marker_ddd9ce871d6b9d9d5bb7f76a59f3dc03.bindTooltip(
+                `<div>
+                     Santiago — Chile
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ddd9ce871d6b9d9d5bb7f76a59f3dc03.setIcon(icon_f50ca4659cc3db4956320f1ea4fa9e5c);
+            
+    
+            var marker_46052e4433cfe609a4d7cd55f1634e46 = L.marker(
+                [-38.726, -62.258],
+                {
+}
+            ).addTo(marker_cluster_2b4f0758375278437f6a5e60cfd04d5f);
+        
+    
+            var icon_bb5d3161c56cad356a3a71d2ee931d2e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9dd9c40b88f4e287e1fc35e949067047 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0fb77bd36778a74520e3991711a0a06b = $(`<div id="html_0fb77bd36778a74520e3991711a0a06b" style="width: 100.0%; height: 100.0%;"><b>Bahia Blanca</b> (Argentina)<br>Region: South America<br>Period: 2000-2019<br>Updateable: <b>Yes</b></div>`)[0];
+                popup_9dd9c40b88f4e287e1fc35e949067047.setContent(html_0fb77bd36778a74520e3991711a0a06b);
+            
+        
+
+        marker_46052e4433cfe609a4d7cd55f1634e46.bindPopup(popup_9dd9c40b88f4e287e1fc35e949067047)
+        ;
+
+        
+    
+    
+            marker_46052e4433cfe609a4d7cd55f1634e46.bindTooltip(
+                `<div>
+                     Bahia Blanca — Argentina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46052e4433cfe609a4d7cd55f1634e46.setIcon(icon_bb5d3161c56cad356a3a71d2ee931d2e);
+            
+    
+            marker_cluster_2b4f0758375278437f6a5e60cfd04d5f.addTo(feature_group_b7fe345348eca8836c331bbf32a7387a);
+        
+    
+            feature_group_b7fe345348eca8836c331bbf32a7387a.addTo(map_71a029c0df221db503a5059fefb10b66);
+        
+    
+            var layer_control_8ab490062d8f58bed852337293266691_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_e96c3cd8e78e8e9c329fe854c36a40b8,
+                    "Esri WorldTerrain" : tile_layer_cec8f77263f289c8f84a279f85486d90,
+                    "OpenTopoMap" : tile_layer_748b52589f62fefb2c96228d5b830f51,
+                    "CartoDB Dark" : tile_layer_7651f69127d32aa433a9ac996d12cc8f,
+                    "OpenStreetMap" : tile_layer_a1cc9b51f76466092346c870abe7165b,
+                },
+                overlays :  {
+                    "Africa" : feature_group_3ec698a48131eb9ddb53de0277f3672a,
+                    "Asia" : feature_group_3606f7e0ca7c59314ae85b5ebc12b6be,
+                    "EU" : feature_group_22ce9754245d3b2afd58b943d0d52414,
+                    "North America" : feature_group_1b7752899f6ff77a41c0b505547bf83e,
+                    "Oceania" : feature_group_f19ed32dcc4d971632f76debd8df6acd,
+                    "South America" : feature_group_b7fe345348eca8836c331bbf32a7387a,
+                },
+            };
+            let layer_control_8ab490062d8f58bed852337293266691 = L.control.layers(
+                layer_control_8ab490062d8f58bed852337293266691_layers.base_layers,
+                layer_control_8ab490062d8f58bed852337293266691_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_71a029c0df221db503a5059fefb10b66);
+
+        
+    
+            map_71a029c0df221db503a5059fefb10b66.fitBounds(
+                [[-38.726, -147.713], [69.757, 153.133]],
+                {}
+            );
+        
+</script>
+</html>
